@@ -4,10 +4,13 @@
 -- See the kickstart.nvim README for more information
 return {
   {
-    'akinsho/toggleterm.nvim',
-    version = '*',
-    opts = {
-      open_mapping = [[<C-t>]],
+    'Dan7h3x/neaterm.nvim',
+    branch = 'stable',
+    event = 'VeryLazy',
+    opts = {},
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'ibhagwan/fzf-lua',
     },
   },
 }

@@ -347,6 +347,8 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
+        { '<leader>d', group = '[D]ebug' },
+        { '<leader>r', group = '[R]EPL' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
@@ -892,12 +894,12 @@ require('lazy').setup({
     'shaunsingh/nord.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('nord').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
+      --   ---@diagnostic disable-next-line: missing-fields
+      --   require('nord').setup {
+      --     styles = {
+      --       comments = { italic = false }, -- Disable italics in comments
+      --     },
+      --   }
 
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
@@ -930,17 +932,17 @@ require('lazy').setup({
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
-      local statusline = require 'mini.statusline'
+      -- local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      -- statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
       -- cursor location to LINE:COLUMN
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
+      -- ---@diagnostic disable-next-line: duplicate-set-field
+      -- statusline.section_location = function()
+      --   return '%2l:%-2v'
+      -- end
 
       require('mini.completion').setup()
       -- ... and there is more!
